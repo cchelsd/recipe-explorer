@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="chelsea dacones">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Explorer</title>
+
+    <!-- External CSS stylesheets and JavaScript libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/morph/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    
+    <!-- Custom JavaScript file -->
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.png" alt="Recipe Explorer Logo" id="logo" />
+      <img src="images/name.png" alt="Recipe Explorer Name" id="name" />
+    </header>
+
+    <!-- Search form for recipes -->
+    <div class="container mt-5">
+      <form id="searchForm" class="mb-3">
+        <div class="input-group">
+          <!-- Input field for search query -->
+          <input type="text" class="form-control" id="searchInput" placeholder="Search for recipes (e.g. spaghetti)..." />
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+
+      <!-- Navigation tabs for recipe search, recipe videos, and random recipe generator -->
+      <ul class="nav nav-tabs" id="recipeTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <!-- Tab for recipe search -->
+          <a
+            class="nav-link active"
+            data-bs-toggle="tab"
+            href="#recipeSearch"
+            id="recipe-tab"
+            aria-selected="true"
+            role="tab"
+            >Recipe Search</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <!-- Tab for recipe videos -->
+          <a
+            class="nav-link"
+            data-bs-toggle="tab"
+            href="#recipeVideos"
+            id="nutrition-tab"
+            aria-selected="false"
+            role="tab"
+            >Recipe Videos</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <!-- Tab for random recipe generator -->
+          <a
+            class="nav-link"
+            data-bs-toggle="tab"
+            href="#randomRecipes"
+            aria-selected="false"
+            role="tab"
+            >Random Recipe Generator</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tab content containers for recipe search, recipe videos, and random recipe generator -->
+    <div class="tab-content mt-3" id="recipeTabsContent">
+      <!-- Tab content for recipe search -->
+      <div class="tab-pane fade active show" id="recipeSearch" role="tabpanel"></div>
+      <!-- Tab content for recipe videos -->
+      <div class="tab-pane fade" id="recipeVideos" role="tabpanel"></div>
+      <!-- Tab content for random recipe generator -->
+      <div class="tab-pane fade" id="randomRecipes" role="tabpanel"></div>
+    </div>
+
+    <!-- Modal for displaying detailed recipe information -->
+    <div class="modal fade" id="recipeModal" tab-index="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content custom-modal-style">
+          <div class="modal-header">
+            <!-- Modal title -->
+            <h5 class="modal-title" id="recipeModalLabel">Recipe Details</h5>
+          </div>
+          <div class="modal-body">
+            <!-- Recipe image, title, details, and link displayed within the modal body -->
+            <img id="recipeImage" />
+            <h2 id="recipeTitle"></h2>
+            <p id="recipeDetails"></p>
+            <a id="recipeLink"></a>
+          </div>
+          <div class="modal-footer">
+            <!-- Close button for the modal -->
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
