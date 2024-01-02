@@ -1,5 +1,8 @@
 # Recipe Explorer
 
+## Description
+Find recipes based on a search query (e.g. pasta). Textual recipes and recipe videos will be provided based on the user's query. 
+
 ## Setup
 1. Signup for APIs:
    - Edamam: https://www.edamam.com
